@@ -52,6 +52,11 @@ jh=-1;
 var sh = setInterval(function(){colorTbl(let_h[++jh][0],let_h[jh][1])},timeFrame);
 setTimeout(function() {clearInterval(sh);}, let_h.length*timeFrame);
 
+var let_hp = [[8,7],[8,8],[9,7],[9,8],[10,8],[9,9],[10,9],[11,9],[8,10],[8,11],[9,10],[9,11],[10,10]]
+jhp=-1;
+var shp = setInterval(function(){heart(let_hp[++jhp][0],let_hp[jhp][1])},timeFrame);
+setTimeout(function() {clearInterval(shp);}, let_hp.length*timeFrame);
+
 var let_u = [[14,12],[15,12],[16,12],[17,12],[18,13],[18,14],[18,15],[17,16],[16,16],[15,16],[14,16]]
 ju=-1;
 var su = setInterval(function(){colorTbl(let_u[++ju][0],let_u[ju][1])},timeFrame);
@@ -69,6 +74,7 @@ function reverse()
 
 	let_i.forEach((v,i)=>heart(v[0],v[1]))
 	let_h.forEach((v,i)=>heart(v[0],v[1]))
+	let_hp.forEach((v,i)=>uncolor(v[0],v[1]))
 	let_u.forEach((v,i)=>heart(v[0],v[1]))
 }
 function reverse2()
@@ -83,6 +89,7 @@ function reverse2()
 
 	let_i.forEach((v,i)=>colorTbl(v[0],v[1]))
 	let_h.forEach((v,i)=>colorTbl(v[0],v[1]))
+	let_hp.forEach((v,i)=>heart(v[0],v[1]))
 	let_u.forEach((v,i)=>colorTbl(v[0],v[1]))
 }
 var largest = (let_i.length>let_h.length)?let_i.length:let_h.length
